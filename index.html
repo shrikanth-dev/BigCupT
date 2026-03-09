@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
@@ -8,7 +7,7 @@
 
 <title>The Big Cup Theory | Cafe in Madhapur</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -16,11 +15,11 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
+font-family:Poppins,sans-serif;
 scroll-behavior:smooth;
 }
 
 body{
-font-family:Poppins;
 background:#F5E6D3;
 color:#2B2B2B;
 }
@@ -28,31 +27,33 @@ color:#2B2B2B;
 /* NAVBAR */
 
 nav{
-position:sticky;
-top:0;
-background:#4B2E2B;
-padding:18px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-z-index:999;
-}
-
-nav h2{
+padding:18px 8%;
+background:#4B2E2B;
 color:white;
-font-family:Playfair Display;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
-nav .links{
+.logo{
+font-size:24px;
+font-family:"Playfair Display";
+}
+
+.nav-links{
+list-style:none;
 display:flex;
-gap:20px;
+gap:25px;
 align-items:center;
 }
 
-nav a{
-color:white;
+.nav-links a{
 text-decoration:none;
-font-weight:500;
+color:white;
+font-size:15px;
 }
 
 .reserve-btn{
@@ -62,18 +63,21 @@ border-radius:6px;
 color:black;
 }
 
+.menu-toggle{
+display:none;
+font-size:28px;
+cursor:pointer;
+}
+
 /* HERO */
 
 .hero{
-
-height:95vh;
+height:100vh;
 background:
 linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
 url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085");
-
 background-size:cover;
 background-position:center;
-
 display:flex;
 align-items:center;
 justify-content:center;
@@ -84,7 +88,7 @@ padding:20px;
 
 .hero h1{
 font-size:60px;
-font-family:Playfair Display;
+font-family:"Playfair Display";
 }
 
 .hero p{
@@ -104,15 +108,30 @@ margin-top:10px;
 
 /* SECTIONS */
 
-.section{
+section{
 padding:90px 10%;
 text-align:center;
 }
 
-.section h2{
+.section-title{
 font-size:40px;
-font-family:Playfair Display;
+font-family:"Playfair Display";
 margin-bottom:20px;
+}
+
+/* ABOUT */
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+margin-top:30px;
+}
+
+.about img{
+width:100%;
+border-radius:10px;
 }
 
 /* GRID */
@@ -161,23 +180,12 @@ object-fit:cover;
 border-radius:10px;
 }
 
-/* REVIEWS */
+/* LOCATION */
 
-.review{
-background:white;
-padding:25px;
-border-radius:10px;
-box-shadow:0 10px 20px rgba(0,0,0,0.1);
-}
-
-/* VISIT */
-
-.visit{
+.location{
 background:#8B3A3A;
 color:white;
 }
-
-/* MAP */
 
 .map iframe{
 width:100%;
@@ -185,23 +193,6 @@ height:400px;
 border:0;
 border-radius:10px;
 margin-top:30px;
-}
-
-/* RESERVE FORM */
-
-form{
-max-width:500px;
-margin:auto;
-display:flex;
-flex-direction:column;
-gap:15px;
-margin-top:30px;
-}
-
-input, textarea{
-padding:12px;
-border-radius:6px;
-border:none;
 }
 
 /* WHATSAPP */
@@ -232,16 +223,34 @@ margin-top:50px;
 
 @media(max-width:768px){
 
+.nav-links{
+display:none;
+flex-direction:column;
+position:absolute;
+top:70px;
+right:0;
+background:#4B2E2B;
+width:220px;
+padding:20px;
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.menu-toggle{
+display:block;
+}
+
 .hero h1{
 font-size:38px;
 }
 
-nav{
-flex-direction:column;
-gap:10px;
+.about{
+grid-template-columns:1fr;
 }
 
-.section{
+section{
 padding:70px 8%;
 }
 
@@ -253,27 +262,24 @@ padding:70px 8%;
 
 <body>
 
-<!-- NAVBAR -->
-
 <nav>
 
-<h2>The Big Cup Theory</h2>
+<div class="logo">The Big Cup Theory</div>
 
-<div class="links">
+<div class="menu-toggle" id="menuToggle">☰</div>
 
-<a href="#about">About</a>
-<a href="#menu">Menu</a>
-<a href="#gallery">Gallery</a>
-<a href="#visit">Visit</a>
-<a href="#reserve" class="reserve-btn">Reserve Table</a>
-
-</div>
+<ul class="nav-links" id="navLinks">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#menu">Menu</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#location">Location</a></li>
+<li><a class="reserve-btn" href="https://wa.me/919390353857">Reserve</a></li>
+</ul>
 
 </nav>
 
-<!-- HERO -->
-
-<section class="hero">
+<section class="hero" id="home">
 
 <div>
 
@@ -287,26 +293,26 @@ padding:70px 8%;
 
 </section>
 
-<!-- ABOUT -->
+<section id="about">
 
-<section class="section" id="about">
+<h2 class="section-title">About The Café</h2>
 
-<h2>About The Café</h2>
+<div class="about">
+
+<img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814">
 
 <p>
-
 The Big Cup Theory is one of Madhapur’s favorite cafés known for its cozy vintage ambience,
 handcrafted coffees, and delicious comfort food.
-
 </p>
+
+</div>
 
 </section>
 
-<!-- MENU -->
+<section id="menu">
 
-<section class="section" id="menu">
-
-<h2>Popular Menu</h2>
+<h2 class="section-title">Popular Menu</h2>
 
 <div class="grid">
 
@@ -317,15 +323,15 @@ handcrafted coffees, and delicious comfort food.
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1548365328-9f547fb0953d">
-<h3>Pancakes</h3>
+<img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e">
+<h3>Chocolate Dessert</h3>
 <p>Soft fluffy pancakes served with syrup.</p>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1601924582975-7e1b8abf3f7b">
-<h3>Farmhouse Pizza</h3>
-<p>Loaded veggie pizza with cheese.</p>
+<img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
+<h3>Latte</h3>
+<p>Soft fluffy pancakes served with syrup.</p>
 </div>
 
 <div class="card">
@@ -350,76 +356,40 @@ handcrafted coffees, and delicious comfort food.
 
 </section>
 
-<!-- GALLERY -->
+<section class="gallery" id="gallery">
 
-<section class="section gallery" id="gallery">
-
-<h2>Café Ambience</h2>
+<h2 class="section-title">Café Ambience</h2>
 
 <div class="grid">
 
 <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24">
-
 <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb">
-
 <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814">
-
 <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31">
-
 <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
-
 <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
 
 </div>
 
 </section>
 
-<!-- RESERVE -->
+<section class="location" id="location">
 
-<section class="section" id="reserve">
-
-<h2>Reserve a Table</h2>
-
-<form>
-
-<input placeholder="Your Name">
-<input placeholder="Phone Number">
-<input type="date">
-<textarea placeholder="Message"></textarea>
-
-<button class="btn">Send Reservation</button>
-
-</form>
-
-</section>
-
-<!-- VISIT -->
-
-<section class="section visit" id="visit">
-
-<h2>Visit Us</h2>
+<h2 class="section-title">Visit Us</h2>
 
 <p>
-
 Vijaya Towers, Ayyappa Society  
 100 Feet Road, Madhapur  
 Hyderabad – 500081
-
 </p>
 
 <p>Open Daily: 8:30 AM – 11:30 PM</p>
 
 <p>Phone: +91 93903 53857</p>
 
-</section>
-
-<!-- MAP -->
-
-<section class="section map">
-
-<h2>Find Us on Map</h2>
-
+<div class="map">
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3806.1438256821025!2d78.3876353!3d17.4528289!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91bf5cc92645%3A0x1bf8c5c86409625c!2sThe%20Big%20Cup%20Theory!5e0!3m2!1sen!2sin!4v1773047461182!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
 
 </section>
 
@@ -431,6 +401,16 @@ Hyderabad – 500081
 
 <a class="whatsapp" href="https://wa.me/919390353857">💬</a>
 
-</body>
+<script>
 
+const menu=document.getElementById("menuToggle")
+const nav=document.getElementById("navLinks")
+
+menu.addEventListener("click",()=>{
+nav.classList.toggle("active")
+})
+
+</script>
+
+</body>
 </html>
