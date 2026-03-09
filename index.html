@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Big Cup Theory | Cafe in Madhapur</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Poppins;
+background:#F5E6D3;
+color:#2B2B2B;
+}
+
+/* NAVBAR */
+
+nav{
+position:sticky;
+top:0;
+background:#4B2E2B;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:999;
+}
+
+nav h2{
+color:white;
+font-family:Playfair Display;
+}
+
+nav .links{
+display:flex;
+gap:20px;
+align-items:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:500;
+}
+
+.reserve-btn{
+background:#C9A46C;
+padding:8px 16px;
+border-radius:6px;
+color:black;
+}
+
+/* HERO */
+
+.hero{
+
+height:95vh;
+background:
+linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.hero h1{
+font-size:60px;
+font-family:Playfair Display;
+}
+
+.hero p{
+margin:20px 0;
+font-size:20px;
+}
+
+.btn{
+background:#8B3A3A;
+color:white;
+padding:14px 32px;
+border-radius:6px;
+text-decoration:none;
+display:inline-block;
+margin-top:10px;
+}
+
+/* SECTIONS */
+
+.section{
+padding:90px 10%;
+text-align:center;
+}
+
+.section h2{
+font-size:40px;
+font-family:Playfair Display;
+margin-bottom:20px;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+/* MENU CARDS */
+
+.card{
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 10px 20px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.card h3{
+margin:15px;
+}
+
+.card p{
+margin:0 15px 20px;
+}
+
+/* GALLERY */
+
+.gallery img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:10px;
+}
+
+/* REVIEWS */
+
+.review{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* VISIT */
+
+.visit{
+background:#8B3A3A;
+color:white;
+}
+
+/* MAP */
+
+.map iframe{
+width:100%;
+height:400px;
+border:0;
+border-radius:10px;
+margin-top:30px;
+}
+
+/* RESERVE FORM */
+
+form{
+max-width:500px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+margin-top:30px;
+}
+
+input, textarea{
+padding:12px;
+border-radius:6px;
+border:none;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+font-size:20px;
+text-decoration:none;
+}
+
+/* FOOTER */
+
+footer{
+background:#4B2E2B;
+color:white;
+text-align:center;
+padding:40px;
+margin-top:50px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:38px;
+}
+
+nav{
+flex-direction:column;
+gap:10px;
+}
+
+.section{
+padding:70px 8%;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<h2>The Big Cup Theory</h2>
+
+<div class="links">
+
+<a href="#about">About</a>
+<a href="#menu">Menu</a>
+<a href="#gallery">Gallery</a>
+<a href="#visit">Visit</a>
+<a href="#reserve" class="reserve-btn">Reserve Table</a>
+
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div>
+
+<h1>Where Coffee Meets Conversation</h1>
+
+<p>Specialty coffee, comfort food and vintage café vibes in the heart of Madhapur.</p>
+
+<a href="#menu" class="btn">Explore Menu</a>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="section" id="about">
+
+<h2>About The Café</h2>
+
+<p>
+
+The Big Cup Theory is one of Madhapur’s favorite cafés known for its cozy vintage ambience,
+handcrafted coffees, and delicious comfort food.
+
+</p>
+
+</section>
+
+<!-- MENU -->
+
+<section class="section" id="menu">
+
+<h2>Popular Menu</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
+<h3>Cappuccino</h3>
+<p>Rich espresso with creamy milk foam.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1548365328-9f547fb0953d">
+<h3>Pancakes</h3>
+<p>Soft fluffy pancakes served with syrup.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1601924582975-7e1b8abf3f7b">
+<h3>Farmhouse Pizza</h3>
+<p>Loaded veggie pizza with cheese.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1550547660-d9450f859349">
+<h3>Burger</h3>
+<p>Juicy grilled burger with crispy fries.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1473093226795-af9932fe5856">
+<h3>Pasta Aglio e Olio</h3>
+<p>Classic Italian garlic olive oil pasta.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1505253716362-afaea6fc5c70">
+<h3>Blueberry Cheesecake</h3>
+<p>Creamy dessert topped with blueberries.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section class="section gallery" id="gallery">
+
+<h2>Café Ambience</h2>
+
+<div class="grid">
+
+<img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24">
+
+<img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb">
+
+<img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814">
+
+<img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31">
+
+<img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
+
+<img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
+
+</div>
+
+</section>
+
+<!-- RESERVE -->
+
+<section class="section" id="reserve">
+
+<h2>Reserve a Table</h2>
+
+<form>
+
+<input placeholder="Your Name">
+<input placeholder="Phone Number">
+<input type="date">
+<textarea placeholder="Message"></textarea>
+
+<button class="btn">Send Reservation</button>
+
+</form>
+
+</section>
+
+<!-- VISIT -->
+
+<section class="section visit" id="visit">
+
+<h2>Visit Us</h2>
+
+<p>
+
+Vijaya Towers, Ayyappa Society  
+100 Feet Road, Madhapur  
+Hyderabad – 500081
+
+</p>
+
+<p>Open Daily: 8:30 AM – 11:30 PM</p>
+
+<p>Phone: +91 93903 53857</p>
+
+</section>
+
+<!-- MAP -->
+
+<section class="section map">
+
+<h2>Find Us on Map</h2>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3806.1438256821025!2d78.3876353!3d17.4528289!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91bf5cc92645%3A0x1bf8c5c86409625c!2sThe%20Big%20Cup%20Theory!5e0!3m2!1sen!2sin!4v1773047461182!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+</section>
+
+<footer>
+
+<p>© 2026 The Big Cup Theory Cafe | Madhapur Hyderabad</p>
+
+</footer>
+
+<a class="whatsapp" href="https://wa.me/919390353857">💬</a>
+
+</body>
+
+</html>
